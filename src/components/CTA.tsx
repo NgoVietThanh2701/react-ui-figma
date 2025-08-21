@@ -2,7 +2,7 @@ import cta_image from '../assets/cta_image.svg';
 
 const CTA = () => {
   return (
-    <div className="w-[1440px] mx-auto px-[100px] mt-[100px] relative">
+    <section className="w-[1440px] mx-auto px-[100px] mt-[100px] relative">
       <div className="bg-background rounded-[45px] p-[60px]">
         <div className="w-[500px] items-start flex flex-col gap-[26px]">
           <span className="font-medium text-3xl leading-[38px]">
@@ -26,7 +26,7 @@ const CTA = () => {
         src={cta_image}
         alt=""
       />
-    </div>
+    </section>
   );
 };
 

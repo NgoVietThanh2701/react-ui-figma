@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import 'tailwindcss';
 
-@theme {
-  --color-background: #f3f3f3;
-  --color-green: #191a23;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
+}
 
+@theme {
+  --color-gray-custom: #f3f3f3;
+  --color-green-custom: #b9ff66;
+  --color-sky-night-custom: #191a23;
   /* font */
   --font-space-grotesk: 'Space Grotesk', sans-serif;
 }

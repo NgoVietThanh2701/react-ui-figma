@@ -9,7 +9,9 @@ const Heading = ({ title, content }: Prop) => {
       <h2 className="font-medium text-[40px] leading-[51px] bg-[#b9ff66] rounded-[7px] px-[7px]">
         {title}
       </h2>
-      <span className="text-[18px] leading-[23px] max-w-1/2">{content}</span>
+      <span className="text-[18px] leading-[23px] max-w-[580px]">
+        {content}
+      </span>
     </div>
   );
 };

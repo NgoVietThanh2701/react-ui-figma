@@ -7,9 +7,9 @@ import card_4 from '../assets/card_4.svg';
 import card_5 from '../assets/card_5.svg';
 import card_6 from '../assets/card_6.svg';
 
-const gray_color = '#F3F3F3';
-const sky_night = '#191A23';
-const green_color = '#B9FF66';
+const gray_color = 'bg-[#F3F3F3]';
+const sky_night = 'bg-[#191A23]';
+const green_color = 'bg-[#B9FF66]';
 
 const Services = () => {
   const title = 'Services';
