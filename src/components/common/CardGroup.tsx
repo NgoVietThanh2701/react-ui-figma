@@ -9,18 +9,22 @@ const CardGroup = ({ name, role, content, avatar }: Prop) => {
   return (
     <a
       href="#"
-      className="px-[35px] py-[40px] rounded-[45px] shadow-[0_5px_0_#191A23] border
+      className="px-7 py-8 md:px-[28px] md:py-[32px] lg:px-[35px] lg:py-[36px] rounded-[45px] shadow-[0_5px_0_#191A23] border
     border-sky-night-custom"
     >
       <div className="flex flex-col gap-7">
         {/* info */}
         <div className="relative">
           {/* picture and name*/}
-          <div className="flex items-end pr-[76[x] gap-[20px]">
+          <div className="flex items-end pr-[76[x] gap-[12px] lg:gap-[16px] xl:gap-[20px]">
             <img src={avatar} alt="" />
-            <div className="">
-              <span className="font-medium text-xl leading-[26px]">{name}</span>
-              <p className="text-lg leading-[23px] whitespace-nowrap">{role}</p>
+            <div className="space-y-2">
+              <span className="font-medium text-xl leading-[26px] block">
+                {name}
+              </span>
+              <p className="text-base xl:text-lg leading-5 lg:leading-[23px]">
+                {role}
+              </p>
             </div>
           </div>
           <div className="absolute z-1 top-0 right-0">

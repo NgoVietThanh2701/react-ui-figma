@@ -1,15 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import 'tailwindcss';
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 200px;
-}
-
 @theme {
   --color-gray-custom: #f3f3f3;
   --color-green-custom: #b9ff66;
   --color-sky-night-custom: #191a23;
   /* font */
   --font-space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
+}
+
+.animate-marquee {
+  animation: marquee 14s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* swiper */
+
+.swiper-custom-prev:disabled,
+.swiper-custom-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.custom-pagination svg {
+  cursor: pointer;
+  transition: fill 0.3s;
+}
+.custom-pagination .swiper-pagination-bullet-active path {
+  fill: #b9ff66;
 }

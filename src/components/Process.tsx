@@ -45,7 +45,7 @@ const Process = () => {
   };
 
   return (
-    <section className="w-[1440px] mx-auto px-[100px]">
+    <section className="container w-full mx-auto px-4 md:px-6 xl:px-[100px]">
       <Heading title={title} content={content} />
 
       {/* list process */}
@@ -57,17 +57,17 @@ const Process = () => {
               key={index}
               className={`${
                 activeIndex === index ? 'bg-green-custom' : 'bg-gray-custom'
-              } flex flex-col items-start py-[41px] px-[60px] gap-[30px] border border-[#191A23] 
-              rounded-[45px] shadow-[0_5px_0px_#191A23] transition-all duration-300
-              ease-in-out w-full`}
+              } flex flex-col items-start py-[14px] md:py-[28px] lg:py-[41px] px-9 md:px-[45px] ld:px-[60px] 
+              gap-[18px] md:gap-[22px] lg:gap-[30px] border border-[#191A23] rounded-[45px] shadow-[0_5px_0px_#191A23]
+              transition-all duration-300 ease-in-out w-full`}
             >
               {/* title */}
               <div className="flex justify-between items-center w-full cursor-pointer">
                 <div className="flex items-center gap-[25px]">
-                  <span className="font-medium text-6xl leading-[77px]">
+                  <span className="font-medium text-3xl md:text-4xl lg:text-6xl leading-[77px]">
                     0{index + 1}
                   </span>
-                  <span className="font-medium text-3xl leading-[38px]">
+                  <span className="font-medium text-2xl md:text-[26px] lg:text-3xl leading-[38px]">
                     {item.title}
                   </span>
                 </div>

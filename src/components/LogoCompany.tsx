@@ -1,9 +1,11 @@
-import company_1 from '../assets/company_1.png';
-import company_2 from '../assets/company_2.png';
-import company_3 from '../assets/company_3.png';
-import company_4 from '../assets/company_4.png';
-import company_5 from '../assets/company_5.png';
-import company_6 from '../assets/company_6.png';
+import {
+  company_1,
+  company_2,
+  company_3,
+  company_4,
+  company_5,
+  company_6
+} from '../assets/images';
 
 const companies = [
   {
@@ -40,17 +42,45 @@ const companies = [
 
 const LogoCompany = () => {
   return (
-    <div className="w-[1440px] mx-auto px-[100px] mt-[70px] flex items-center justify-between">
-      <div className="flex flex-row justify-between w-full">
+    <div className="container mx-auto px-4 md:px-6 xl:px-[100px] mt-[70px] overflow-x-hidden">
+      <div className="animate-marquee flex gap-16 items-center whitespace-nowrap">
         {companies.length &&
           companies.map((image) => (
-            <a href={image.alt} key={image.id}>
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
-              />
-            </a>
+            <img
+              src={image.url}
+              alt={image.alt}
+              className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
+            />
+          ))}
+        {companies.length &&
+          companies.map((image) => (
+            <img
+              src={image.url}
+              alt={image.alt}
+              className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
+            />
+          ))}
+      </div>
+      {/* mobile */}
+      <div
+        style={{ animationDirection: 'reverse' }}
+        className="flex sm:hidden animate-marquee items-center gap-16 whitespace-nowrap"
+      >
+        {companies.length &&
+          companies.map((image) => (
+            <img
+              src={image.url}
+              alt={image.alt}
+              className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
+            />
+          ))}
+        {companies.length &&
+          companies.map((image) => (
+            <img
+              src={image.url}
+              alt={image.alt}
+              className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
+            />
           ))}
       </div>
     </div>

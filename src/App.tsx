@@ -1,4 +1,6 @@
+import Contact from './components/Contact';
 import CTA from './components/CTA';
+import Footer from './components/Footer';
 import Group from './components/Group';
 import Header from './components/Header';
 import LogoCompany from './components/LogoCompany';
@@ -24,7 +26,8 @@ function App() {
       <Process />
       <Group />
       <Testimonial />
-      <div className="h-[1000px]"></div>
+      <Contact />
+      <Footer />
     </main>
   );
 }

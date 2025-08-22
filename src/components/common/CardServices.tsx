@@ -1,38 +1,27 @@
 import { cx } from '../../utils/cx';
 
 type Props = {
-  title_1: string;
-  title_2: string;
+  title: string;
   img: string;
   bg_text: string;
   bg: string;
 };
 
-const CardServices = ({ title_1, title_2, img, bg_text, bg }: Props) => {
+const CardServices = ({ title, img, bg_text, bg }: Props) => {
   return (
     <div
-      className={`flex justify-between text-center p-[50px] gap-[40px] ${bg} border border-[#191A23]
-    shadow-[0_5px_0px_#191A23] rounded-[45px]`}
+      className={`flex justify-between items-end md:items-center text-center p-9 lg:p-[50px] gap-2 sm:gap-6 md:gap-7 lg:gap-[40px] ${bg} 
+      border border-[#191A23] shadow-[0_5px_0px_#191A23] rounded-[45px]`}
     >
-      <div className="flex flex-col justify-center items-start gap-[93px]">
-        <div className="flex flex-col items-start">
-          <span
-            className={cx(
-              `px-[7px] rounded-[7px] font-medium text-3xl leading-[38px]`,
-              bg_text
-            )}
-          >
-            {title_1}
-          </span>
-          <span
-            className={cx(
-              'px-[7px] rounded-[7px] font-medium text-3xl leading-[38px]',
-              bg_text
-            )}
-          >
-            {title_2}
-          </span>
-        </div>
+      <div className="flex flex-col justify-between items-start gap-16 md:gap-20 lg:gap-6">
+        <span
+          className={cx(
+            `px-[7px] rounded-[7px] font-medium text-xl md:text-3xl leading-7 md:leading-[38px] text-left`,
+            bg_text
+          )}
+        >
+          {title}
+        </span>
         <a href="#" className="flex items-center gap-[15px]">
           {/*icon*/}
           <svg
@@ -54,7 +43,7 @@ const CardServices = ({ title_1, title_2, img, bg_text, bg }: Props) => {
             />
           </svg>
           <span
-            className={`text-xl leading-7 text-${
+            className={`text-xl leading-7 whitespace-nowrap text-${
               bg === 'bg-[#191A23]' ? 'white' : 'black'
             }`}
           >
@@ -63,7 +52,9 @@ const CardServices = ({ title_1, title_2, img, bg_text, bg }: Props) => {
         </a>
       </div>
       {/* image */}
-      <img src={img} alt="Card_1" />
+      <div className="w-full">
+        <img src={img} alt="Card_1" className="size-full" />
+      </div>
     </div>
   );
 };
