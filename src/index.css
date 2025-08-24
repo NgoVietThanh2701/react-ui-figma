@@ -27,18 +27,42 @@ html {
   }
 }
 
-/* swiper */
-
+/* Testimonials slider */
 .swiper-custom-prev:disabled,
 .swiper-custom-next:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.custom-pagination svg {
+.custom-pagination .custom-bullet {
+  background: transparent;
+  border: none;
+  opacity: 0.8;
+  color: white;
   cursor: pointer;
-  transition: fill 0.3s;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
 }
-.custom-pagination .swiper-pagination-bullet-active path {
-  fill: #b9ff66;
+
+.custom-bullet:hover {
+  transform: scale(1.1);
+}
+
+.custom-bullet.swiper-pagination-bullet-active {
+  color: var(--color-green-custom);
+  transform: scale(1.1);
+}
+
+.custom-bullet svg {
+  transition: all 0.3s ease;
+}
+
+.custom-bullet.swiper-pagination-bullet-active svg {
+  filter: drop-shadow(0 0 4px white);
+}
+
+/* Hide default Swiper pagination */
+.testimonials-swiper .swiper-pagination {
+  display: none;
 }

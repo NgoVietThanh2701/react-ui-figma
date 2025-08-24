@@ -1,4 +1,5 @@
 import { imageHeader } from '../assets/images';
+
 const Header = () => {
   return (
     <header className="container w-full mt-28 md:mt-36 lg:mt-44 mx-auto px-4 md:px-6 xl:px-[100px]">

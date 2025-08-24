@@ -6,6 +6,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { useCallback, useEffect, useRef } from 'react';
 
 type TItem = {
   name: string;
@@ -18,7 +19,7 @@ const items: TItem[] = [
     name: 'John Smith 1',
     role: 'Marketing Director at XYZ Corp',
     content:
-      'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence'
+      'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business'
   },
   {
     name: 'John Smith 2',
@@ -56,8 +57,6 @@ const Testimonial = () => {
       <Heading title={title} content={content} />
       {/* content */}
       <div className="bg-sky-night-custom rounded-[45px] py-[84px]">
-        {/* card */}
-
         <Swiper
           modules={[Navigation, Pagination]}
           slidesPerView={1.5}
@@ -67,75 +66,88 @@ const Testimonial = () => {
           initialSlide={1}
           pagination={{
             clickable: true,
-            // dynamicBullets: true,
             el: '.custom-pagination',
-            // bulletClass: 'swiper-pagination-bullet-custom',
-            // bulletActiveClass: 'swiper-pagination-bullet-active-custom'
-            renderBullet: (index, className) => {
+            renderBullet: useCallback((index: number, className: string) => {
               return `
-        <svg class="${className}" width="17" height="17" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.0099 2.05941L14 0L11.9604 7.0099L14 14L7.0099 11.9604L0 14L2.05941 7.0099L0 0L7.0099 2.05941Z" fill="white"/>
-        </svg>
-      `;
-            }
+                <button class="${className} custom-bullet flex items-center justify-center">
+                  <svg width="17" height="17" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300">
+                    <path d="M7.0099 2.05941L14 0L11.9604 7.0099L14 14L7.0099 11.9604L0 14L2.05941 7.0099L0 0L7.0099 2.05941Z" fill="currentColor"/>
+                  </svg>
+                </button>`;
+            }, [])
           }}
           navigation={{
             nextEl: '.swiper-custom-next',
             prevEl: '.swiper-custom-prev'
           }}
           breakpoints={{
-            // Mobile
             320: {
               slidesPerView: 1,
-              spaceBetween: 10,
+              spaceBetween: 16,
               centeredSlides: true
             },
-            // Tablet
-            768: {
-              slidesPerView: 1.4,
+            640: {
+              slidesPerView: 1.2,
               spaceBetween: 20
             },
-            // Desktop
+            768: {
+              slidesPerView: 1.4,
+              spaceBetween: 24
+            },
             1024: {
               slidesPerView: 1.6,
-              spaceBetween: 30
+              spaceBetween: 32
             },
             1280: {
-              slidesPerView: 1.7,
+              slidesPerView: 1.8,
               spaceBetween: 40
             }
           }}
+          className="testimonials-swiper"
         >
           {items.map((item, index) => (
-            <SwiperSlide key={index} className="h-full py-4 px-8 md:py-12">
-              <div
-                key={index}
-                className="text-white flex flex-col gap-10 mx-auto"
-              >
-                <div className="text-lg border border-green-custom rounded-4xl p-5 md:p-7 ld:p-10">
+            <SwiperSlide
+              key={index}
+              style={{ height: 'auto' }}
+              className="py-4 px-8 md:py-12 h-auto"
+            >
+              <div className="text-white flex flex-col gap-10 mx-auto h-full">
+                <div className="text-lg border border-green-custom flex-1 rounded-4xl p-5 md:p-7 lg:p-10 ">
                   <span>{item.content}</span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-green-custom text-lg">{item.name}</span>
-                  <span className="">{item.role}</span>
+                  <span className="text-green-custom shrink-0 text-lg">
+                    {item.name}
+                  </span>
+                  <span>{item.role}</span>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
         {/* Navigation Controls */}
-        <div className="flex items-center justify-center gap-6 mt-8">
+        <div className="flex items-center justify-center gap-6 mt-6">
           {/* Previous Button */}
-          <button className="swiper-custom-prev text-white cursor-pointer hover:text-green-custom flex items-center justify-center w-10 h-10">
-            <FaArrowLeft size={26} />
+          <button
+            aria-label="Previous testimonial"
+            className="swiper-custom-prev text-white cursor-pointer hover:text-green-custom flex items-center justify-center w-12 h-12 transition-all duration-300 hover:scale-110"
+          >
+            <FaArrowLeft size={20} />
           </button>
 
           {/* Custom Pagination */}
-          <div className="custom-pagination text-white items-center justify-center w-fit flex gap-3"></div>
+          <div
+            style={{ width: 'fit-content' }}
+            className="flex custom-pagination items-center justify-center gap-4"
+          ></div>
 
           {/* Next Button */}
-          <button className="swiper-custom-next text-white cursor-pointer hover:text-green-custom flex items-center justify-center w-10 h-10">
-            <FaArrowRight size={26} />
+          <button
+            aria-label="Next testimonial"
+            className="swiper-custom-next text-white cursor-pointer hover:text-green-custom flex items-center justify-center w-12 h-12 transition-all duration-300 hover:scale-110"
+          >
+            <FaArrowRight size={20} />
           </button>
         </div>
       </div>

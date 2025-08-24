@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { cx } from '../../utils/cx';
 
 type Props = {
@@ -22,7 +23,7 @@ const CardServices = ({ title, img, bg_text, bg }: Props) => {
         >
           {title}
         </span>
-        <a href="#" className="flex items-center gap-[15px]">
+        <Link to="#" className="flex items-center gap-[15px]">
           {/*icon*/}
           <svg
             width="41"
@@ -49,7 +50,7 @@ const CardServices = ({ title, img, bg_text, bg }: Props) => {
           >
             Learn more
           </span>
-        </a>
+        </Link>
       </div>
       {/* image */}
       <div className="w-full">

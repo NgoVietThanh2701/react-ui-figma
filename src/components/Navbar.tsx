@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { logo } from '../assets/images';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,54 +29,54 @@ const Navbar = () => {
           className="hidden lg:flex flex-row items-center justify-center gap-[5px]
         lg:gap-7 xl:gap-9 text-xl leading-7"
         >
-          <a href="about" className="cursor-pointer whitespace-nowrap">
+          <Link to="about" className="cursor-pointer whitespace-nowrap">
             About us
-          </a>
-          <a href="service" className="cursor-pointer whitespace-nowrap">
+          </Link>
+          <Link to="service" className="cursor-pointer whitespace-nowrap">
             Services
-          </a>
-          <a href="use case" className="cursor-pointer whitespace-nowrap">
+          </Link>
+          <Link to="use case" className="cursor-pointer whitespace-nowrap">
             Use Cases
-          </a>
-          <a href="pricing" className="cursor-pointer whitespace-nowrap">
+          </Link>
+          <Link to="pricing" className="cursor-pointer whitespace-nowrap">
             Pricing
-          </a>
-          <a href="blog" className="cursor-pointer whitespace-nowrap">
+          </Link>
+          <Link to="blog" className="cursor-pointer whitespace-nowrap">
             Blog
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="border-1 border-solid border-[#191A23] whitespace-nowrap rounded-[14px] px-[35px] py-[20px] cursor-pointer"
           >
             Request a quote
-          </a>
+          </Link>
         </div>
       </div>
 
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 py-4 shadow-sm">
           <div className="container mx-auto px-4 space-y-4 flex flex-col md:items-center">
-            <a href="about" className="cursor-pointer">
+            <Link to="about" className="cursor-pointer">
               About us
-            </a>
-            <a href="service" className="cursor-pointer">
+            </Link>
+            <Link to="service" className="cursor-pointer">
               Services
-            </a>
-            <a href="use case" className="cursor-pointer">
+            </Link>
+            <Link to="use case" className="cursor-pointer">
               Use Cases
-            </a>
-            <a href="pricing" className="cursor-pointer">
+            </Link>
+            <Link to="pricing" className="cursor-pointer">
               Pricing
-            </a>
-            <a href="blog" className="cursor-pointer">
+            </Link>
+            <Link to="blog" className="cursor-pointer">
               Blog
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="#"
               className="border-1 border-solid border-[#191A23] rounded-[14px] px-[35px] py-[20px] cursor-pointer"
             >
               Request a quote
-            </a>
+            </Link>
           </div>
         </div>
       )}

@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import { x, facebook, linked, logoFooter } from '../assets/images';
 
 const Footer = () => {
   return (
-    <div className="container mx-auto w-full px-4 md:px-6 xl:px-[100px] mt-[140px]">
+    <footer className="container mx-auto w-full px-4 md:px-6 xl:px-[100px] mt-[140px]">
       <div
         className="flex flex-col py-[50px] px-[60px] gap-[50px] bg-sky-night-custom
         rounded-t-[45px]"
@@ -13,26 +14,47 @@ const Footer = () => {
           <div className="flex flex-col gap-4 lg:flex-row items-center justify-between w-full">
             <img src={logoFooter} alt="Logo" />
             <nav className="flex flex-col lg:flex-row items-start gap-6 lg:gap-10 text-white">
-              <a className="underline decoration-gray-50/70 underline-offset-4">
+              <Link
+                to=""
+                className="underline decoration-gray-50/70 underline-offset-4"
+              >
                 About us
-              </a>
-              <a className="underline decoration-gray-50/70 underline-offset-4">
+              </Link>
+              <Link
+                to=""
+                className="underline decoration-gray-50/70 underline-offset-4"
+              >
                 Services
-              </a>
-              <a className="underline decoration-gray-50/70 underline-offset-4">
+              </Link>
+              <Link
+                to=""
+                className="underline decoration-gray-50/70 underline-offset-4"
+              >
                 Use Cases
-              </a>
-              <a className="underline decoration-gray-50/70 underline-offset-4">
+              </Link>
+              <Link
+                to=""
+                className="underline decoration-gray-50/70 underline-offset-4"
+              >
                 Pricing
-              </a>
-              <a className="underline decoration-gray-50/70 underline-offset-4">
+              </Link>
+              <Link
+                to="#"
+                className="underline decoration-gray-50/70 underline-offset-4"
+              >
                 Blog
-              </a>
+              </Link>
             </nav>
             <div className="hidden lg:flex items-start gap-[20px]">
-              <img src={linked} alt="Linked" />
-              <img src={facebook} alt="FB" />
-              <img src={x} alt="x" />
+              <Link to="Linked">
+                <img src={linked} alt="Linked" />
+              </Link>
+              <Link to="FB">
+                <img src={facebook} alt="FB" />
+              </Link>
+              <Link to="">
+                <img src={x} alt="x" />
+              </Link>
             </div>
           </div>
           {/* bottom */}
@@ -67,9 +89,15 @@ const Footer = () => {
               </button>
             </div>
             <div className="flex lg:hidden items-start gap-[20px]">
-              <img src={linked} alt="Linked" />
-              <img src={facebook} alt="FB" />
-              <img src={x} alt="x" />
+              <Link to="Linked">
+                <img src={linked} alt="Linked" />
+              </Link>
+              <Link to="FB">
+                <img src={facebook} alt="FB" />
+              </Link>
+              <Link to="">
+                <img src={x} alt="x" />
+              </Link>
             </div>
           </div>
           {/* line */}
@@ -79,16 +107,16 @@ const Footer = () => {
           <div className="bg-white w-full opacity-70 h-[1.5px]"></div>
           <div className="flex flex-col lg:flex-row text-center text-lg leading-7 text-white">
             <span>© 2023 Positivus. All Rights Reserved.</span>
-            <a
-              href="#privacy"
+            <Link
+              to="#privacy"
               className="ml-5 underline decoration-white underline-offset-2"
             >
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -42,19 +42,21 @@ const companies = [
 
 const LogoCompany = () => {
   return (
-    <div className="container mx-auto px-4 md:px-6 xl:px-[100px] mt-[70px] overflow-x-hidden">
+    <section className="container mx-auto px-4 md:px-6 xl:px-[100px] mt-[70px] overflow-x-hidden">
       <div className="animate-marquee flex gap-16 items-center whitespace-nowrap">
         {companies.length &&
-          companies.map((image) => (
+          companies.map((image, index) => (
             <img
+              key={index}
               src={image.url}
               alt={image.alt}
               className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
             />
           ))}
         {companies.length &&
-          companies.map((image) => (
+          companies.map((image, index) => (
             <img
+              key={index}
               src={image.url}
               alt={image.alt}
               className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
@@ -67,23 +69,25 @@ const LogoCompany = () => {
         className="flex sm:hidden animate-marquee items-center gap-16 whitespace-nowrap"
       >
         {companies.length &&
-          companies.map((image) => (
+          companies.map((image, index) => (
             <img
+              key={index}
               src={image.url}
               alt={image.alt}
               className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
             />
           ))}
         {companies.length &&
-          companies.map((image) => (
+          companies.map((image, index) => (
             <img
+              key={index}
               src={image.url}
               alt={image.alt}
               className="grayscale opacity-90 hover:grayscale-0 transition-all h-12 cursor-pointer"
             />
           ))}
       </div>
-    </div>
+    </section>
   );
 };
 

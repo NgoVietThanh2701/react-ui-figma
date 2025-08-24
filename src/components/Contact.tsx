@@ -17,11 +17,7 @@ const Contact = () => {
           {/* radio */}
           <div className="flex items-center justify-center lg:justify-start gap-8 w-full">
             <div className="flex items-center gap-2">
-              <input
-                type="radio"
-                checked
-                className="w-7 h-7 accent-green-custom"
-              />
+              <input type="radio" className="w-7 h-7 accent-green-custom" />
               <span className="text-lg leading-[23px] whitespace-nowrap">
                 Say Hi
               </span>
