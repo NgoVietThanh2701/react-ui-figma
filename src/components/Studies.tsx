@@ -1,13 +1,9 @@
 import Heading from './common/Heading';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Navigation, Pagination } from 'swiper/modules';
 // Direct React component imports
 
 // Styles must use direct files imports
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
 
 const title = 'Case Studies';

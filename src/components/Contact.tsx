@@ -53,7 +53,7 @@ const Contact = () => {
                   type="radio"
                   value="Say Hi"
                   {...register('title', {
-                    required: 'Tiêu đề không được để trống'
+                    required: 'Title cannot blank'
                   })}
                   className="w-7 h-7 accent-green-custom"
                 />
@@ -66,7 +66,7 @@ const Contact = () => {
                   type="radio"
                   value="Get a Quote"
                   {...register('title', {
-                    required: 'Tiêu đề không được để trống'
+                    required: 'Title cannot blank'
                   })}
                   className="w-7 h-7 accent-green-custom"
                 />
@@ -91,10 +91,10 @@ const Contact = () => {
               id="name"
               type="text"
               {...register('name', {
-                required: 'Tên không được để trống',
+                required: 'Name cannot blank',
                 minLength: {
                   value: 6,
-                  message: 'Tên phải có ít nhất 6 ký tự'
+                  message: 'Name must have at a least 6 char'
                 }
               })}
               placeholder="Name"
@@ -114,15 +114,13 @@ const Contact = () => {
               id="email"
               type="text"
               {...register('email', {
-                required: 'Email không được để trống',
+                required: 'Email cannot blank',
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: 'Địa chỉ email không hợp lệ'
+                  message: 'Email is not valid'
                 }
               })}
               placeholder="Email"
-              // value={payload.email}
-              // onChange={handleChange}
             />
             {errors.email && (
               <span className="text-red-500 font italic leading-7">
@@ -138,15 +136,13 @@ const Contact = () => {
               className="w-full h-32 px-[30px] py-[18px] bg-white border border-black rounded-[14px]"
               id="message"
               {...register('message', {
-                required: 'Message không được để trống',
+                required: 'Message cannot blank',
                 minLength: {
                   value: 10,
-                  message: 'Message phải có ít nhất 10 ký tự'
+                  message: 'Message must have at a least 9 char'
                 }
               })}
               placeholder="Message"
-              // value={payload.message}
-              // onChange={handleChange}
             />
             {errors.message && (
               <span className="text-red-500 font italic leading-7">

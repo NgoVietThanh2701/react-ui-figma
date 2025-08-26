@@ -1,12 +1,9 @@
 import Heading from './common/Heading';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa6';
+import { useCallback } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { useCallback, useEffect, useRef } from 'react';
 
 type TItem = {
   name: string;
@@ -67,6 +64,8 @@ const Testimonial = () => {
           pagination={{
             clickable: true,
             el: '.custom-pagination',
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
             renderBullet: useCallback((index: number, className: string) => {
               return `
                 <button class="${className} custom-bullet flex items-center justify-center">
@@ -112,7 +111,7 @@ const Testimonial = () => {
               className="py-4 px-8 md:py-12 h-auto"
             >
               <div className="text-white flex flex-col gap-10 mx-auto h-full">
-                <div className="text-lg border border-green-custom flex-1 rounded-4xl p-5 md:p-7 lg:p-10 ">
+                <div className="text-lg border border-green-custom flex-1 rounded-4xl p-5 md:p-7 lg:p-10 relative">
                   <span>{item.content}</span>
                 </div>
                 <div className="flex flex-col gap-1">
@@ -127,7 +126,7 @@ const Testimonial = () => {
         </Swiper>
 
         {/* Navigation Controls */}
-        <div className="flex items-center justify-center gap-6 mt-6">
+        <div className="flex items-center justify-center gap-3 md:gap-10 mt-6">
           {/* Previous Button */}
           <button
             aria-label="Previous testimonial"
@@ -139,7 +138,7 @@ const Testimonial = () => {
           {/* Custom Pagination */}
           <div
             style={{ width: 'fit-content' }}
-            className="flex custom-pagination items-center justify-center gap-4"
+            className="flex custom-pagination items-center justify-center gap-0 md:gap-1 lg:gap-2"
           ></div>
 
           {/* Next Button */}

@@ -62,7 +62,7 @@ const Navbar = () => {
             <Link to="service" className="cursor-pointer">
               Services
             </Link>
-            <Link to="use case" className="cursor-pointer">
+            <Link to="use-case" className="cursor-pointer">
               Use Cases
             </Link>
             <Link to="pricing" className="cursor-pointer">
